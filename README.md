@@ -1,3 +1,5 @@
+# CNN-fooling-attack
+Fooling an image classification model by changing values of image pixels.
 The code demonstrate the algorithm, inspired from simple behaviour of a unicellular microorganism, to fool Convolutional Neural Networks (CNNs). The current code will collect statistical results by attack a bunch of random images. 
 
 The files contain:
