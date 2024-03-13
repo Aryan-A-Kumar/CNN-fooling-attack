@@ -49,8 +49,7 @@ def attack_all(models, samples=10000, pixels=(1, 3, 5), targeted=False, verbose=
                         result.append(result_)
                     success = True if np.sum(result) > 1 else False
                     model_results.append([img, pixel_count, result, success])
-                
-                print('pixel_count', pixel_count, 'success ratio:', np.sum(np.array(model_results)[:,3])/len(model_results))
+                print('pixel_count', pixel_count, 'success ratio:', np.sum(np.array(model_results, dtype = "object")[:,3])/len(model_results))
 
         results += model_results
 
@@ -59,6 +58,8 @@ def attack_all(models, samples=10000, pixels=(1, 3, 5), targeted=False, verbose=
 num_samples = 300 # select the number of random images to attack
 num_pixels = [1] # select the number of pixels to use during the attack
 is_targeted = False # select whether attack is targeted or untareted
+
 results = attack_all(model, samples=num_samples, pixels=num_pixels, targeted=is_targeted)
+
 with open('targeted_attack_bas_lenet135.pkl', 'wb') as file:
     pickle.dump(results, file)

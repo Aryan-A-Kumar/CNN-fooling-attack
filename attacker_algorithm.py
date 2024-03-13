@@ -19,7 +19,7 @@ def attacker(func, numPix, bounds, success_fun, maxiter = 400):
         return np.clip(x_in, 0, 1)
 
     def scale(x_in):
-        return (x_in*bounds_diff + lb).astype(np.int)
+        return (x_in*bounds_diff + lb).astype(int)
 
     x_best = np.zeros((numPix, nDim))
     f_best = np.ones((numPix, 1))
